@@ -12,193 +12,310 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
             background: #fefce8;
-            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         /* NAVBAR */
         .navbar {
-            max-width: 1000px;
+            background: white;
+            border-bottom: 1px solid #e8e4d8;
+            padding: 16px 32px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navContainer {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
-            border-bottom: 1px solid #e8e4d8;
             flex-wrap: wrap;
             gap: 16px;
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: 800;
-            color: #d4a84a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
             text-decoration: none;
         }
+
+        .logoIcon { font-size: 24px; }
+        .logoText { font-size: 20px; font-weight: 800; color: #d4a84a; }
 
         .navLinks {
             display: flex;
-            gap: 24px;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .navLinks a {
-            text-decoration: none;
-            color: #4a5568;
+        .navLink {
+            padding: 8px 20px;
+            background: transparent;
+            border: none;
+            border-radius: 30px;
             font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .navLink:hover { background: #f0f2f5; }
+        .navLink.aktif {
+            background: #d4a84a;
+            color: white;
         }
 
         .loginBtn {
-            color: #d4a84a !important;
+            padding: 8px 20px;
+            background: #d4a84a;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
             font-weight: 600;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            background: #d4a84a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
         }
 
         /* HERO */
         .hero {
-            max-width: 1000px;
-            margin: 40px auto;
+            background: linear-gradient(135deg, #d4a84a 0%, #c4943a 100%);
+            margin: 32px 32px 0 32px;
+            border-radius: 32px;
+            padding: 60px 40px;
             text-align: center;
+            color: white;
         }
 
-        .hero h1 {
-            font-size: 36px;
-            color: #4a7c3f;
-            margin-bottom: 12px;
-        }
-
-        .hero p {
-            color: #8a9c7a;
-            margin-bottom: 20px;
+        .heroTitle { font-size: 42px; font-weight: 800; margin-bottom: 16px; }
+        .heroSubtitle {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .heroBtn {
-            display: inline-block;
-            background: #d4a84a;
-            color: white;
-            text-decoration: none;
-            padding: 8px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-        }
-
-        /* SEARCH */
-        .searchSection {
-            max-width: 1000px;
-            margin: 20px auto;
-        }
-
-        .searchInput {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #e8e4d8;
-            border-radius: 30px;
-            font-size: 14px;
+            padding: 14px 36px;
             background: white;
-        }
-
-        /* PRODUCTS */
-        .productsSection {
-            max-width: 1000px;
-            margin: 40px auto;
-        }
-
-        .productItem {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            border-bottom: 1px solid #e8e4d8;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .productInfo h3 {
-            font-size: 16px;
-            color: #4a7c3f;
-            margin-bottom: 4px;
-        }
-
-        .productInfo p {
-            font-size: 12px;
-            color: #8a9c7a;
-        }
-
-        .productRight {
-            text-align: right;
-        }
-
-        .productPrice {
+            border: none;
+            border-radius: 60px;
             font-size: 16px;
             font-weight: 700;
             color: #d4a84a;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
         }
 
+        /* SEARCH */
+        .searchSection { padding: 32px 32px 0 32px; }
+        .searchContainer {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .searchIcon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #a0aec0;
+        }
+        .searchInput {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border: 1px solid #e8e4d8;
+            border-radius: 60px;
+            font-size: 15px;
+            background: white;
+            outline: none;
+        }
+        .searchInput:focus {
+            border-color: #d4a84a;
+            box-shadow: 0 0 0 3px rgba(212, 168, 74, 0.1);
+        }
+
+        /* PRODUCTS */
+        .productsSection { padding: 40px 32px 60px 32px; }
+        .productsGrid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .productCard {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e8e4d8;
+            transition: all 0.3s ease;
+        }
+
+        .productCard:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .cardImage {
+            height: 160px;
+            background: linear-gradient(135deg, #fefce8, #f5f2e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cardEmoji { font-size: 64px; }
+        .cardBody { padding: 20px; }
+        .productTitle {
+            font-size: 18px;
+            font-weight: 700;
+            color: #4a7c3f;
+            margin-bottom: 8px;
+        }
+        .productDesc {
+            font-size: 13px;
+            color: #8a9c7a;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .productFooter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+        }
+        .productPrice {
+            font-size: 18px;
+            font-weight: 800;
+            color: #d4a84a;
+        }
+        .priceUnit {
+            font-size: 11px;
+            font-weight: 400;
+            color: #a0aec0;
+        }
         .sewaBtn {
+            padding: 8px 24px;
             background: #d4a84a;
-            color: white;
             border: none;
-            padding: 6px 20px;
-            border-radius: 30px;
-            font-size: 12px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
             cursor: pointer;
-            margin-top: 6px;
+            transition: all 0.2s ease;
+        }
+        .sewaBtn:hover {
+            background: #c4943a;
+            transform: scale(1.02);
         }
 
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; text-align: center; }
-            .productItem { flex-direction: column; text-align: center; }
-            .productRight { text-align: center; }
+            .navContainer { flex-direction: column; }
+            .hero { margin: 16px; padding: 40px 20px; border-radius: 32px; }
+            .heroTitle { font-size: 28px; }
+            .heroSubtitle { font-size: 14px; }
+            .productsGrid { grid-template-columns: 1fr; }
+            .searchSection { padding: 32px 20px 0 20px; }
+            .productsSection { padding: 40px 20px 60px 20px; }
         }
     </style>
 </head>
 <body>
-
     <!-- NAVBAR -->
-    <div class="navbar">
-        <a href="#" class="logo">🎮 FRIZRENT</a>
-        <div class="navLinks">
-            <a href="#">Beranda</a>
-            <a href="#">Keranjang</a>
-            <a href="#">Peminjaman</a>
-            <a href="#" class="loginBtn">Login</a>
+    <nav class="navbar">
+        <div class="navContainer">
+            <a href="#" class="logo">
+                <span class="logoIcon">🎮</span>
+                <span class="logoText">FRIZRENT</span>
+            </a>
+            <div class="navLinks">
+                <a href="#" class="navLink aktif">Beranda</a>
+                <a href="#" class="navLink">Keranjang</a>
+                <a href="#" class="navLink">Peminjaman</a>
+                <a href="#" class="loginBtn">Login</a>
+            </div>
         </div>
-    </div>
+    </nav>
 
     <!-- HERO -->
     <div class="hero">
-        <h1>Sewa Game & Aplikasi</h1>
-        <p>Premium favoritmu dengan harga terjangkau. Sewa harian, download langsung!</p>
-        <a href="#" class="heroBtn">Lihat Koleksi →</a>
+        <h1 class="heroTitle">Sewa Game & Aplikasi</h1>
+        <p class="heroSubtitle">Premium favoritmu dengan harga terjangkau. Sewa harian, download langsung!</p>
+        <a href="#koleksi" class="heroBtn">Lihat Koleksi →</a>
     </div>
 
     <!-- SEARCH -->
     <div class="searchSection">
-        <input type="text" placeholder="Cari game atau aplikasi..." class="searchInput" id="searchInput" onkeyup="searchProducts()">
+        <div class="searchContainer">
+            <span class="searchIcon">🔍</span>
+            <input type="text" placeholder="Cari game atau aplikasi..." class="searchInput" id="searchInput" onkeyup="searchProducts()">
+        </div>
     </div>
 
     <!-- PRODUCTS -->
-    <div class="productsSection" id="productsList"></div>
+    <div id="koleksi" class="productsSection">
+        <div class="productsGrid" id="productsGrid"></div>
+    </div>
 
     <script>
         const products = [
-            { name: "Game WoodAisem", desc: "perjalanan dihutan", price: 10000 },
-            { name: "Aplikasi CakeShop Kia", desc: "Aplikasi Penjualan Cake", price: 150000 },
-            { name: "Game Portal Jungle", desc: "Game platform mengambil koin", price: 5000 }
+            { id: 1, name: "Game WoodAisem", description: "perjalanan dihutan", price: 10000, platform: "game", logo: "🎮" },
+            { id: 2, name: "Aplikasi CakeShop Kia", description: "Aplikasi Penjualan Cake", price: 150000, platform: "android", logo: "📱" },
+            { id: 3, name: "Game Portal Jungle", description: "Game platform mengambil koin", price: 5000, platform: "game", logo: "🎮" }
         ];
 
-        function displayProducts(data) {
-            const container = document.getElementById('productsList');
-            container.innerHTML = '';
-            data.forEach(p => {
-                container.innerHTML += `
-                    <div class="productItem">
-                        <div class="productInfo">
-                            <h3>${p.name}</h3>
-                            <p>${p.desc}</p>
+        function getProductLogo(platform) {
+            if (platform === "game" || platform === "Game" || platform === "windows") return "🎮";
+            if (platform === "android" || platform === "ios" || platform === "aplikasi") return "📱";
+            return "🎮";
+        }
+
+        function displayProducts(productsToShow) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+            
+            productsToShow.forEach(product => {
+                grid.innerHTML += `
+                    <div class="productCard">
+                        <div class="cardImage">
+                            <span class="cardEmoji">${getProductLogo(product.platform)}</span>
                         </div>
-                        <div class="productRight">
-                            <div class="productPrice">Rp ${p.price.toLocaleString()}</div>
-                            <button class="sewaBtn" onclick="alert('Fitur sewa akan segera hadir')">Sewa</button>
+                        <div class="cardBody">
+                            <h3 class="productTitle">${product.name}</h3>
+                            <p class="productDesc">${product.description}</p>
+                            <div class="productFooter">
+                                <span class="productPrice">Rp ${product.price.toLocaleString()} <span class="priceUnit">/hari</span></span>
+                                <button class="sewaBtn" onclick="alert('Fitur sewa akan segera hadir. Silakan login di web Vercel.')">Sewa</button>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -206,16 +323,15 @@
         }
 
         function searchProducts() {
-            const search = document.getElementById('searchInput').value.toLowerCase();
+            const searchValue = document.getElementById('searchInput').value.toLowerCase();
             const filtered = products.filter(p => 
-                p.name.toLowerCase().includes(search) || 
-                p.desc.toLowerCase().includes(search)
+                p.name.toLowerCase().includes(searchValue) || 
+                p.description.toLowerCase().includes(searchValue)
             );
             displayProducts(filtered);
         }
 
         displayProducts(products);
     </script>
-
 </body>
 </html>
