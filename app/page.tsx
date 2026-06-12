@@ -76,6 +76,17 @@ export default function HomePage() {
     }
   };
 
+  // Fungsi untuk menentukan logo berdasarkan platform
+  const getProductLogo = (platform: string) => {
+    if (platform === "game" || platform === "Game" || platform === "windows") {
+      return "🎮"; // Logo PS/Game
+    }
+    if (platform === "android" || platform === "ios" || platform === "aplikasi") {
+      return "📱"; // Logo HP/Android
+    }
+    return "🎮"; // default
+  };
+
   const filteredProducts = products.filter((p) =>
     p.name.toLowerCase().includes(search.toLowerCase()) ||
     (p.description && p.description.toLowerCase().includes(search.toLowerCase()))
@@ -109,7 +120,7 @@ export default function HomePage() {
             <button onClick={() => router.push("/peminjaman")} className="navLink">Peminjaman</button>
             {session ? (
               <>
-                <button onClick={() => router.push("/logout")} className="logoutBtn">Logout</button>
+                <button onClick={() => router.push("/api/auth/signout")} className="logoutBtn">Logout</button>
                 <div className="avatar">{session.user?.name?.charAt(0).toUpperCase()}</div>
               </>
             ) : (
@@ -150,7 +161,7 @@ export default function HomePage() {
           {(search ? filteredProducts : products).map((product) => (
             <div key={product.id} className="productCard">
               <div className="cardImage">
-                <span className="cardEmoji">🎮</span>
+                <span className="cardEmoji">{getProductLogo(product.platform)}</span>
               </div>
               <div className="cardBody">
                 <h3 className="productTitle">{product.name}</h3>
@@ -344,6 +355,7 @@ export default function HomePage() {
           overflow: hidden;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
           border: 1px solid #e8e4d8;
+          transition: all 0.3s ease;
         }
         .productCard:hover {
           transform: translateY(-6px);
@@ -351,7 +363,7 @@ export default function HomePage() {
         }
         .cardImage {
           height: 160px;
-          background: #fefce8;
+          background: linear-gradient(135deg, #fefce8, #f5f2e0);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -395,6 +407,7 @@ export default function HomePage() {
           font-weight: 600;
           color: white;
           cursor: pointer;
+          transition: all 0.2s ease;
         }
         .sewaBtn:hover {
           background: #c4943a;
