@@ -2,6 +2,7 @@
 
 ## 🌐 Website
 [https://frizent.vercel.app](https://frizent.vercel.app)
+https://ameliafrizky.github.io/FRIZENT/
 
 ## 📱 Fitur
 - Login & Register
